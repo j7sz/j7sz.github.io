@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Jia-Chng (Jason) Loh / My Profile"
+title                    : "Jia-Chng (Jason) Loh / Homepage"
 title_separator          : "-"
 name                     : &name "Jason Loh"
 description              : &description "personal description"
