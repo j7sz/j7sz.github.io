@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* Ph.D., University of Wollongong, Australia, 2025
+* Ph.D., University of Wollongong, Australia, 2025 ([IC2 Group](https://www.ic2-uow.org) alumni)
 * M.S. (by Research) in Information Technology, Multimedia University, Malaysia, 2019
 * B.IT.(Hons) in Security Technology, Multimedia University, Malaysia, 2016
 
