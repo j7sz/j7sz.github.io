@@ -11,60 +11,43 @@ redirect_from:
 
 Education
 ======
-* Ph.D , University of Wollongong, Australia, 2024 (expected)
+* Ph.D., University of Wollongong, Australia, 2025
 * M.S. (by Research) in Information Technology, Multimedia University, Malaysia, 2019
 * B.IT.(Hons) in Security Technology, Multimedia University, Malaysia, 2016
 
-Work experience
+Work Experience
 ======
-* 2023 -- Current: Casual Teching Staff
+* 2026 -- Current: Research Fellow
+  * Singapore Institute of Technology, Singapore
+
+* 2025 -- 2026: Research Fellow
+  * National University of Singapore (NUS-NCS), Singapore
+
+* 2023 -- 2025: Casual Teaching Staff
   * University of Wollongong, Australia
-  * Tutorial/Lab Demostration
+  * Tutorial/Lab Demonstration
     * Ethical Hacking
     * Security Essentials
-  
 
 * 2019 -- 2021: Research Assistant
   * National University of Singapore, Singapore
   * Research & Development
     * Secure Multiparty Computation
-    * Deep Packet Inspection over Encrypted Traffics
+    * Deep Packet Inspection over Encrypted Traffic
     * Searchable Encryption
-    * Privacy-preserving Biometric Authentication/Identification
-  <!-- * Supervisor: Professor Hub -->
+    * Privacy-Preserving Biometric Authentication/Identification
 
 * 2016 -- 2018: Graduate Research Assistant
   * Multimedia University, Malaysia
-  * Teching and Research
-  
-  
-<!-- Skills
+  * Teaching and Research
+
+Awards and Honors
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3 -->
+* Best Paper Award, ACISP 2024
+* Best Paper Award, ESORICS 2020
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-<!-- Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul> -->
-  
-<!-- Service and leadership
-======
-* Currently signed in to 43 different slack teams -->
