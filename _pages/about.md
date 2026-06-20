@@ -23,4 +23,4 @@ My research has been recognised with the **Best Paper Award at ACISP 2024** and 
 
 ---
 
-<small>I would like to acknowledge that this web profile is managed with the assistance of [Claude Code](https://claude.ai/code) by Anthropic.</small>
+<small>I would like to acknowledge that this web profile is managed with the assistance of [Claude Code](https://claude.ai/code) by Anthropic. Some content, including research summaries and descriptions, has been drafted or paraphrased by Claude Code; I may not be fully aware of every summarised statement, and errors or inaccuracies may be present. Should you notice any mistakes, please do not hesitate to contact me at [jason.loh@singaporetech.edu.sg](mailto:jason.loh@singaporetech.edu.sg).</small>

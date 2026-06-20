@@ -16,8 +16,8 @@ The widespread adoption of TLS encryption has rendered traditional **deep packet
 
 - Why TLS encryption challenges conventional network security inspection, and what the threat model looks like
 - What must remain private: user traffic (from the middlebox) and enterprise rules (from the middlebox provider)
-- How **garbled circuits** and **token encryption** enable oblivious inspection of encrypted traffic
-- How **reusable obfuscated rules** (PrivDPI) reduce setup overhead by orders of magnitude compared to BlindBox (SIGCOMM 2015)
+- How BlindBox (SIGCOMM 2015) enables encrypted traffic inspection using **garbled circuits**, and the high setup latency this incurs
+- How **PrivDPI** overcomes this with a new rule encryption technique and **reusable obfuscated rules**, reducing setup overhead by orders of magnitude
 - How **Pine** extends privacy guarantees with **rule-hiding** and faster TLS connection establishment
 
 ## Related Publications
