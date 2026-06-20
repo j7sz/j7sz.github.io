@@ -23,4 +23,4 @@ My research has been recognised with the **Best Paper Award at ACISP 2024** and 
 
 ---
 
-<small>This web profile is managed with the assistance of [Claude Code](https://claude.ai/code) by Anthropic.</small>
+<small>I would like to acknowledge that this web profile is managed with the assistance of [Claude Code](https://claude.ai/code) by Anthropic.</small>
