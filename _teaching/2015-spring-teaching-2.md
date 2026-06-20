@@ -1,20 +1,26 @@
 ---
-title: "Teaching experience 2"
+title: "How DPI Can Inspect Encrypted Traffic over TLS in a Privacy-Preserving Manner"
 collection: teaching
-type: "Workshop"
-permalink: /teaching/2015-spring-teaching-1
-venue: "University 1, Department"
-date: 2015-01-01
-location: "City, Country"
+type: "Research Seminar / Tutorial"
+permalink: /teaching/privacy-preserving-dpi-tls
+venue: "National University of Singapore"
+date: 2020-01-01
+location: "Singapore"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+## Overview
 
-Heading 1
-======
+The widespread adoption of TLS encryption has rendered traditional **deep packet inspection (DPI)** — used by network middleboxes to detect anomalies and security threats — largely ineffective. This tutorial explores how DPI can be performed **directly over encrypted TLS traffic** without exposing users' plaintext data or an enterprise's proprietary inspection rule set, drawing on techniques from applied cryptography.
 
-Heading 2
-======
+## What You Will Learn
 
-Heading 3
-======
+- Why TLS encryption challenges conventional network security inspection, and what the threat model looks like
+- What must remain private: user traffic (from the middlebox) and enterprise rules (from the middlebox provider)
+- How **garbled circuits** and **token encryption** enable oblivious inspection of encrypted traffic
+- How **reusable obfuscated rules** (PrivDPI) reduce setup overhead by orders of magnitude compared to BlindBox (SIGCOMM 2015)
+- How **Pine** extends privacy guarantees with **rule-hiding** and faster TLS connection establishment
+
+## Related Publications
+
+- [PrivDPI: Privacy-Preserving Encrypted Traffic Inspection with Reusable Obfuscated Rules](/publication/NPL+19) — CCS 2019 &nbsp;&nbsp; [[Slides]](https://j7sz.github.io/files/PrivDPI_slide.pdf)
+- [Pine: Enabling Privacy-Preserving Deep Packet Inspection on TLS with Rule-Hiding and Fast Connection Establishment](/publication/NHP+20) — ESORICS 2020 *(Best Paper Award)*
