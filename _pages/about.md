@@ -20,3 +20,7 @@ My research has been recognised with the **Best Paper Award at ACISP 2024** and 
 - Privacy-preserving network inspection
 - Post-quantum cryptography for IoT deployment (MQTTs protocol)
 - Algebraic Group Model (AGM) and random oracle proof techniques
+
+---
+
+<small>This web profile is managed with the assistance of [Claude Code](https://claude.ai/code) by Anthropic.</small>
