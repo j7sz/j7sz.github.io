@@ -21,7 +21,7 @@ Work Experience
   * Singapore Institute of Technology, Singapore
 
 * 2025 -- 2026: Research Fellow
-  * National University of Singapore (NUS-NCS), Singapore
+  * NUS-NCS, National University of Singapore, Singapore
 
 * 2023 -- 2025: Casual Teaching Staff
   * University of Wollongong, Australia
@@ -30,7 +30,7 @@ Work Experience
     * Security Essentials
 
 * 2019 -- 2021: Research Assistant
-  * National University of Singapore, Singapore
+  * NUS-Singtel Cyber Security Laboratory (now NUS-NCS), National University of Singapore, Singapore
   * Research & Development
     * Secure Multiparty Computation
     * Deep Packet Inspection over Encrypted Traffic
