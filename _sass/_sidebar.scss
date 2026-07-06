@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ========================================================================== 
    SIDEBAR
    ========================================================================== */
 
@@ -256,5 +256,63 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+/*
+   Professional profile-card polish
+   ========================================================================== */
+
+@include breakpoint($large) {
+  .sidebar {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .sidebar .author__avatar,
+  .sidebar .author__content,
+  .sidebar .author__urls-wrapper {
+    text-align: center;
+  }
+
+  .sidebar .author__avatar img {
+    max-width: 150px;
+    padding: 4px;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+  }
+
+  .sidebar .author__name {
+    color: #111827;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .sidebar .author__bio {
+    color: #4b5563;
+    font-size: 0.82em;
+    line-height: 1.55;
+  }
+
+  .sidebar .author__urls {
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .sidebar .author__urls a {
+    margin-bottom: 0.35rem;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 0.82em;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .sidebar .author__urls a:hover {
+    background: #f3f4f6;
+    color: #0f172a;
+    text-decoration: none;
   }
 }
