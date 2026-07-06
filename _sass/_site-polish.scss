@@ -10,8 +10,8 @@
 
 .masthead {
   background: #ffffff;
-  border-bottom: 3px solid #38bdf8;
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.10);
+  border-bottom: 2px solid #38bdf8;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
 }
 
 .masthead__inner-wrap {
@@ -115,7 +115,7 @@
 /*
    Sidebar/contact links
    --------------------------------------------------------------------------
-   Show contact links clearly on mobile and let long email addresses wrap.
+   Keep the mobile Follow dropdown opaque and readable.
 */
 
 .sidebar .author__urls-wrapper,
@@ -125,25 +125,27 @@
   max-width: 100%;
 }
 
+.sidebar .author__urls-wrapper {
+  z-index: 1000;
+}
+
 .sidebar .author__urls-wrapper button {
-  display: none;
+  background: #374151;
+  color: #ffffff;
+  border: 1px solid #1f2937;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.22);
 }
 
 .sidebar .author__urls {
-  display: block;
-  position: static;
-  right: auto;
-  z-index: auto;
-  margin-top: 0.75rem;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+  opacity: 1;
 }
 
-.sidebar .author__urls:before,
 .sidebar .author__urls:after {
-  display: none;
+  border-color: #ffffff transparent;
 }
 
 .sidebar .author__urls li {
@@ -152,10 +154,21 @@
 
 .sidebar .author__urls a {
   display: block;
+  color: #111827;
   text-align: left;
   overflow-wrap: anywhere;
   word-break: break-word;
   line-height: 1.35;
+}
+
+.sidebar .author__urls a:visited {
+  color: #111827;
+}
+
+.sidebar .author__urls a:hover {
+  background: #f1f5f9;
+  color: #0369a1;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 1023px) {
@@ -181,22 +194,45 @@
   }
 
   .sidebar .author__urls-wrapper {
-    display: block;
-    margin-top: 0.75rem;
-    padding-left: 0;
-    width: 100%;
+    display: table-cell;
+    position: relative;
+    width: auto;
+    padding-left: 1rem;
+    vertical-align: middle;
+  }
+
+  .sidebar .author__urls-wrapper button {
+    display: inline-block;
   }
 
   .sidebar .author__urls {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1001;
+    min-width: 270px;
+    max-width: min(92vw, 420px);
+    margin-top: 12px;
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .sidebar .author__urls.is--visible {
+    display: block;
+  }
+
+  .sidebar .author__urls li {
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .sidebar .author__urls li:last-child {
+    border-bottom: 0;
   }
 
   .sidebar .author__urls a {
-    padding: 0.25rem 0;
-    color: #374151;
-    font-size: 0.85rem;
+    padding: 0.55rem 0.25rem;
+    font-size: 0.9rem;
   }
 }
 
