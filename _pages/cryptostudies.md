@@ -7,28 +7,134 @@ author_profile: true
 
 {% include base_path %}
 
-CryptoStudies
-=============
+<style>
+/* Category section */
+details.cs-category {
+  margin: 1.2em 0;
+  border: 1px solid #d7e8ef;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+details.cs-category > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.8em 1em;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #f4fafd, #eaf4f9);
+  border-left: 4px solid #52adc8;
+  transition: background 0.2s ease;
+}
+details.cs-category > summary:hover {
+  background: linear-gradient(135deg, #eaf6fb, #ddeef6);
+}
+details.cs-category[open] > summary {
+  border-bottom: 1px solid #d7e8ef;
+}
+details.cs-category > .cs-category-body {
+  padding: 0.9em 1em;
+}
+
+/* Paper note card */
+details.cs-paper {
+  margin: 0.8em 0;
+  border: 1px solid #e3edf2;
+  border-radius: 6px;
+  background: #fcfeff;
+}
+details.cs-paper > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.65em 0.9em;
+  font-weight: 600;
+  color: #34495e;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+details.cs-paper > summary:hover {
+  color: #52adc8;
+  background: #f4fafd;
+}
+details.cs-paper[open] > summary {
+  color: #52adc8;
+  border-bottom: 1px dashed #d7e8ef;
+}
+details.cs-paper > .cs-paper-body {
+  padding: 0.9em 1.1em;
+}
+details.cs-paper .cs-paper-meta {
+  font-size: 0.92em;
+  color: #5d6d7e;
+}
+
+/* Arrow indicators */
+details.cs-category > summary::before,
+details.cs-paper > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 0.5em;
+  color: #52adc8;
+  transition: transform 0.2s ease;
+}
+details.cs-category[open] > summary::before,
+details.cs-paper[open] > summary::before {
+  transform: rotate(90deg);
+}
+details.cs-category > summary::-webkit-details-marker,
+details.cs-paper > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Small utility sections */
+details.cs-aside {
+  margin: 0.8em 0;
+  border-left: 3px solid #d7e8ef;
+  padding-left: 0.9em;
+}
+details.cs-aside > summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  color: #5d6d7e;
+  padding: 0.3em 0;
+}
+details.cs-aside > summary:hover { color: #52adc8; }
+details.cs-aside > summary::before {
+  content: '▸';
+  display: inline-block;
+  margin-right: 0.45em;
+  color: #52adc8;
+  transition: transform 0.2s ease;
+}
+details.cs-aside[open] > summary::before { transform: rotate(90deg); }
+details.cs-aside > summary::-webkit-details-marker { display: none; }
+</style>
 
 CryptoStudies is my living research notebook for reading, categorizing, and comparing cryptography papers. The goal is to keep short, structured notes that make it easier to revisit papers, compare arguments across papers, and connect them to ongoing research work.
 
-Current focus areas include symmetric cryptography, post-quantum cryptography, security proofs, cryptanalysis, protocols, and implementation issues.
+Current focus areas include symmetric cryptography, post-quantum cryptography, security proofs, cryptanalysis, protocols, and implementation issues. Click a category below to expand it, then click a paper title to open its study note.
 
-Note on summaries
------------------
-
-The reading summaries on this page are generated with assistance from AI tools (ChatGPT and Claude Code) and then curated as part of my ongoing study process. They are intended as working notes, not authoritative paper reviews. If you notice any factual mistake, misinterpretation, missing context, or unclear phrasing, please let me know so I can correct and improve the notes.
+**Note on summaries:** The reading summaries on this page are generated with assistance from AI tools (ChatGPT and Claude Code) and then curated as part of my ongoing study process. They are intended as working notes, not authoritative paper reviews. If you notice any factual mistake, misinterpretation, missing context, or unclear phrasing, please let me know so I can correct and improve the notes.
 
 Paper library
 -------------
 
-### CASPER: Detecting Compromise of Passkey Storage on the Cloud
+<details class="cs-category" open>
+<summary>Authentication &amp; Passkeys</summary>
+<div class="cs-category-body" markdown="1">
 
+<details class="cs-paper">
+<summary>CASPER: Detecting Compromise of Passkey Storage on the Cloud (USENIX Security 2025)</summary>
+<div class="cs-paper-body" markdown="1">
+
+<div class="cs-paper-meta" markdown="1">
 **Paper:** Mazharul Islam, Sunpreet S. Arora, Rahul Chatterjee, Ke Coby Wang, *Detecting Compromise of Passkey Storage on the Cloud*, 34th USENIX Security Symposium, 2025  
 **Link:** [https://www.usenix.org/conference/usenixsecurity25/presentation/islam](https://www.usenix.org/conference/usenixsecurity25/presentation/islam)  
 **Category:** Authentication; FIDO2/Passkeys; Breach Detection; Decoy-Based Defences  
 **Status:** Hands-on study — replicated and explored in my companion repo [Pollo — The CASPER Saver](https://github.com/j7sz/Pollo---The-CASPER-saver)  
 **Summary note:** Generated with assistance from Claude Code; subject to revision after further reading.
+</div>
 
 **Core question:** When users back up their FIDO2 synced passkeys to the cloud storage of a passkey management service (PMS), how can a website detect that those passkeys have been stolen and are being abused for unauthorized logins?
 
@@ -50,13 +156,27 @@ I explored CASPER beyond the paper in my repo [Pollo — The CASPER Saver](https
 
 CASPER is a nice example of transplanting a mature defensive idea (honeywords) into a new authentication ecosystem (FIDO2 synced passkeys) while carefully respecting that ecosystem's constraints — no protocol changes for legitimate users, and a threat model where the attacker fully controls the stolen backup. It also connects naturally to my broader interest in deployment-oriented cryptographic engineering: the hard part is not the cryptographic trick itself, but making detection statistically meaningful against adaptive attackers at negligible deployment cost.
 
-### Too Much Crypto
+</div>
+</details>
 
+</div>
+</details>
+
+<details class="cs-category" open>
+<summary>Symmetric Cryptography &amp; Cryptanalysis</summary>
+<div class="cs-category-body" markdown="1">
+
+<details class="cs-paper">
+<summary>Too Much Crypto (IACR ePrint 2019/1492)</summary>
+<div class="cs-paper-body" markdown="1">
+
+<div class="cs-paper-meta" markdown="1">
 **Paper:** Jean-Philippe Aumasson, *Too Much Crypto*, IACR ePrint 2019/1492  
 **Link:** [https://eprint.iacr.org/2019/1492](https://eprint.iacr.org/2019/1492)  
 **Category:** Symmetric Cryptography; Cryptanalysis; Security Margins  
 **Status:** First-pass study note  
 **Summary note:** Generated with assistance from ChatGPT; subject to revision after further reading.
+</div>
 
 **Core question:** Are some widely deployed symmetric primitives using more rounds than real-world security requires?
 
@@ -84,17 +204,32 @@ The paper discusses reduced-round variants of AES, BLAKE2, ChaCha, and SHA-3. It
 
 This paper is useful as a risk-assessment reading. It challenges the habit of treating every non-generic cryptanalytic result as equally alarming, and it asks whether cryptographic engineering should distinguish more carefully between theoretical, impractical, near-practical, and practical attacks.
 
-Update log
-----------
+</div>
+</details>
 
+</div>
+</details>
+
+<details class="cs-aside">
+<summary>Update log</summary>
+<div markdown="1">
+
+* **2026-07-07:** Reorganized the page into categorized, expandable sections for easier navigation.
 * **2026-07-07:** Added a study note on *CASPER* (USENIX Security 2025) with links to my hands-on companion repo, Pollo — The CASPER Saver.
 * **2026-07-07:** Added a disclosure note that the summaries are generated with assistance from AI tools (ChatGPT and Claude Code) and should be treated as working notes.
 * **2026-07-07:** Added the initial CryptoStudies page with the first study note on *Too Much Crypto*.
 
-Planned additions
------------------
+</div>
+</details>
+
+<details class="cs-aside">
+<summary>Planned additions</summary>
+<div markdown="1">
 
 * Add more papers by category.
 * Add a reusable paper-note template.
 * Add comparison tables for related papers.
 * Track whether each note is a first-pass read, deep read, proof audit, or implementation-focused review.
+
+</div>
+</details>
