@@ -1,14 +1,15 @@
-/* ==========================================================================
+/* ========================================================================== 
    MASTHEAD
    ========================================================================== */
 
 .masthead {
   position: fixed;
-  background: white;
-  border-bottom: 1px solid $border-color;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e5e7eb;
   height: $masthead-height;
   top: 0;
   width: 100%;
+  box-shadow: 0 1px 8px rgba(15, 23, 42, 0.04);
 
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -31,7 +32,13 @@
     }
 
     a {
+      color: #374151;
       text-decoration: none;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: #0f172a;
+      }
     }
   }
 }
