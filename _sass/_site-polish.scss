@@ -1,0 +1,146 @@
+/* ========================================================================== 
+   Site-specific polish
+   ========================================================================== */
+
+/*
+   Top navigation
+   --------------------------------------------------------------------------
+   Make the masthead readable on small screens and avoid the pale, cramped
+   appearance shown on mobile browsers.
+*/
+
+.masthead {
+  background: #0f172a;
+  border-bottom: 3px solid #38bdf8;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.18);
+}
+
+.masthead__inner-wrap {
+  padding: 0.75rem 1rem;
+}
+
+.greedy-nav {
+  min-width: 0;
+  background: transparent;
+}
+
+.greedy-nav a,
+.masthead__inner-wrap a {
+  color: #f8fafc;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.greedy-nav a:hover,
+.masthead__inner-wrap a:hover {
+  color: #bae6fd;
+}
+
+.greedy-nav .visible-links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.greedy-nav .visible-links::-webkit-scrollbar {
+  display: none;
+}
+
+.greedy-nav .visible-links li {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.greedy-nav .visible-links a {
+  margin: 0;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.greedy-nav .visible-links a:before {
+  display: none;
+}
+
+.greedy-nav .visible-links a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+}
+
+.greedy-nav button {
+  background: #1e293b;
+  color: #f8fafc;
+  border-radius: 999px;
+}
+
+.greedy-nav .hidden-links {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+}
+
+.greedy-nav .hidden-links a {
+  color: #111827;
+}
+
+.greedy-nav .hidden-links a:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+@media screen and (max-width: 900px) {
+  .masthead {
+    height: auto;
+    min-height: 56px;
+  }
+
+  .masthead__inner-wrap {
+    padding: 0.55rem 0.75rem;
+  }
+
+  .greedy-nav .visible-links a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.82rem;
+  }
+}
+
+/*
+   Sidebar/contact links
+   --------------------------------------------------------------------------
+   Let long email addresses wrap within the sidebar instead of spilling or
+   aligning awkwardly beside the main content.
+*/
+
+.sidebar .author__urls-wrapper,
+.sidebar .author__urls,
+.sidebar .author__urls li,
+.sidebar .author__urls a {
+  max-width: 100%;
+}
+
+.sidebar .author__urls li {
+  white-space: normal;
+}
+
+.sidebar .author__urls a {
+  display: block;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+@include breakpoint($large) {
+  .sidebar .author__urls-wrapper {
+    text-align: left;
+  }
+
+  .sidebar .author__urls a {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    line-height: 1.35;
+  }
+}
