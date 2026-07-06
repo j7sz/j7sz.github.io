@@ -14,6 +14,11 @@ CryptoStudies is my living research notebook for reading, categorizing, and comp
 
 Current focus areas include symmetric cryptography, post-quantum cryptography, security proofs, cryptanalysis, protocols, and implementation issues.
 
+Note on summaries
+-----------------
+
+The reading summaries on this page are generated with assistance from ChatGPT and then curated as part of my ongoing study process. They are intended as working notes, not authoritative paper reviews. If you notice any factual mistake, misinterpretation, missing context, or unclear phrasing, please let me know so I can correct and improve the notes.
+
 Paper library
 -------------
 
@@ -22,7 +27,8 @@ Paper library
 **Paper:** Jean-Philippe Aumasson, *Too Much Crypto*, IACR ePrint 2019/1492  
 **Link:** [https://eprint.iacr.org/2019/1492](https://eprint.iacr.org/2019/1492)  
 **Category:** Symmetric Cryptography; Cryptanalysis; Security Margins  
-**Status:** First-pass study note
+**Status:** First-pass study note  
+**Summary note:** Generated with assistance from ChatGPT; subject to revision after further reading.
 
 **Core question:** Are some widely deployed symmetric primitives using more rounds than real-world security requires?
 
@@ -53,6 +59,7 @@ This paper is useful as a risk-assessment reading. It challenges the habit of tr
 Update log
 ----------
 
+* **2026-07-07:** Added a disclosure note that the summaries are generated with assistance from ChatGPT and should be treated as working notes.
 * **2026-07-07:** Added the initial CryptoStudies page with the first study note on *Too Much Crypto*.
 
 Planned additions
