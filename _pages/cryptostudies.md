@@ -17,10 +17,38 @@ Current focus areas include symmetric cryptography, post-quantum cryptography, s
 Note on summaries
 -----------------
 
-The reading summaries on this page are generated with assistance from ChatGPT and then curated as part of my ongoing study process. They are intended as working notes, not authoritative paper reviews. If you notice any factual mistake, misinterpretation, missing context, or unclear phrasing, please let me know so I can correct and improve the notes.
+The reading summaries on this page are generated with assistance from AI tools (ChatGPT and Claude Code) and then curated as part of my ongoing study process. They are intended as working notes, not authoritative paper reviews. If you notice any factual mistake, misinterpretation, missing context, or unclear phrasing, please let me know so I can correct and improve the notes.
 
 Paper library
 -------------
+
+### CASPER: Detecting Compromise of Passkey Storage on the Cloud
+
+**Paper:** Mazharul Islam, Sunpreet S. Arora, Rahul Chatterjee, Ke Coby Wang, *Detecting Compromise of Passkey Storage on the Cloud*, 34th USENIX Security Symposium, 2025  
+**Link:** [https://www.usenix.org/conference/usenixsecurity25/presentation/islam](https://www.usenix.org/conference/usenixsecurity25/presentation/islam)  
+**Category:** Authentication; FIDO2/Passkeys; Breach Detection; Decoy-Based Defences  
+**Status:** Hands-on study — replicated and explored in my companion repo [Pollo — The CASPER Saver](https://github.com/j7sz/Pollo---The-CASPER-saver)  
+**Summary note:** Generated with assistance from Claude Code; subject to revision after further reading.
+
+**Core question:** When users back up their FIDO2 synced passkeys to the cloud storage of a passkey management service (PMS), how can a website detect that those passkeys have been stolen and are being abused for unauthorized logins?
+
+**Main idea:** CASPER ("Capturing pASskey comPromise by attackER") is the first passkey breach detection framework that lets web service providers detect the abuse of passkeys leaked from a PMS. Synced passkeys solve the account-recovery problem of device-bound credentials, but they concentrate risk: a breach of the PMS cloud storage exposes users' private signing keys. Rather than trying to prevent theft, CASPER detects misuse — it adapts the classic *honeywords* idea (decoy passwords planted alongside real ones) from the password setting to the passkey setting, planting decoy passkeys in the PMS backup so that a login attempt using a decoy signals that the storage has been breached.
+
+**Key concepts:**
+
+* Synced passkeys trade device-bound security for recoverability, making the PMS cloud storage a high-value breach target.
+* Decoy-based detection: an attacker who steals the backup cannot reliably distinguish real passkeys from planted decoys; using a decoy at login reveals the compromise.
+* Detection as a complement to prevention — the framework assumes the breach can happen and focuses on catching exploitation.
+* The design analyses detection effectiveness against strategic attackers who optimize which stolen credentials to try, and under partial marking of sites.
+* Deployability: CASPER integrates into existing passkey backup, synchronization, and authentication flows with minimal user-experience impact and negligible performance overhead.
+
+**Hands-on study:**
+
+I explored CASPER beyond the paper in my repo [Pollo — The CASPER Saver](https://github.com/j7sz/Pollo---The-CASPER-saver), which includes an interactive Python notebook walking through the detection simulations (runnable via Binder), a Go proof-of-concept prototype of the login and detection flows, and PRISM model-checking scripts evaluating detection probability across parameters such as the number of snapshots, number of sites, and the fraction of unmarked sites. The official artifact from the authors is available at [islamazhar/CASPER](https://github.com/islamazhar/CASPER).
+
+**Study takeaway:**
+
+CASPER is a nice example of transplanting a mature defensive idea (honeywords) into a new authentication ecosystem (FIDO2 synced passkeys) while carefully respecting that ecosystem's constraints — no protocol changes for legitimate users, and a threat model where the attacker fully controls the stolen backup. It also connects naturally to my broader interest in deployment-oriented cryptographic engineering: the hard part is not the cryptographic trick itself, but making detection statistically meaningful against adaptive attackers at negligible deployment cost.
 
 ### Too Much Crypto
 
@@ -59,7 +87,8 @@ This paper is useful as a risk-assessment reading. It challenges the habit of tr
 Update log
 ----------
 
-* **2026-07-07:** Added a disclosure note that the summaries are generated with assistance from ChatGPT and should be treated as working notes.
+* **2026-07-07:** Added a study note on *CASPER* (USENIX Security 2025) with links to my hands-on companion repo, Pollo — The CASPER Saver.
+* **2026-07-07:** Added a disclosure note that the summaries are generated with assistance from AI tools (ChatGPT and Claude Code) and should be treated as working notes.
 * **2026-07-07:** Added the initial CryptoStudies page with the first study note on *Too Much Crypto*.
 
 Planned additions
