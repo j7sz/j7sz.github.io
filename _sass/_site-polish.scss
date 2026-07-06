@@ -5,14 +5,13 @@
 /*
    Top navigation
    --------------------------------------------------------------------------
-   Make the masthead readable on small screens and avoid the pale, cramped
-   appearance shown on mobile browsers.
+   Keep the masthead light, readable, and usable on mobile browsers.
 */
 
 .masthead {
-  background: #0f172a;
+  background: #ffffff;
   border-bottom: 3px solid #38bdf8;
-  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.10);
 }
 
 .masthead__inner-wrap {
@@ -21,20 +20,25 @@
 
 .greedy-nav {
   min-width: 0;
-  background: transparent;
+  background: #ffffff;
 }
 
 .greedy-nav a,
 .masthead__inner-wrap a {
-  color: #f8fafc;
+  color: #111827;
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.2;
 }
 
+.greedy-nav a:visited,
+.masthead__inner-wrap a:visited {
+  color: #111827;
+}
+
 .greedy-nav a:hover,
 .masthead__inner-wrap a:hover {
-  color: #bae6fd;
+  color: #0369a1;
 }
 
 .greedy-nav .visible-links {
@@ -67,14 +71,14 @@
 }
 
 .greedy-nav .visible-links a:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: #f1f5f9;
   text-decoration: none;
 }
 
 .greedy-nav button {
-  background: #1e293b;
-  color: #f8fafc;
-  border-radius: 999px;
+  background: #64748b;
+  color: #ffffff;
+  border-radius: 0;
 }
 
 .greedy-nav .hidden-links {
@@ -111,8 +115,7 @@
 /*
    Sidebar/contact links
    --------------------------------------------------------------------------
-   Let long email addresses wrap within the sidebar instead of spilling or
-   aligning awkwardly beside the main content.
+   Show contact links clearly on mobile and let long email addresses wrap.
 */
 
 .sidebar .author__urls-wrapper,
@@ -120,6 +123,27 @@
 .sidebar .author__urls li,
 .sidebar .author__urls a {
   max-width: 100%;
+}
+
+.sidebar .author__urls-wrapper button {
+  display: none;
+}
+
+.sidebar .author__urls {
+  display: block;
+  position: static;
+  right: auto;
+  z-index: auto;
+  margin-top: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.sidebar .author__urls:before,
+.sidebar .author__urls:after {
+  display: none;
 }
 
 .sidebar .author__urls li {
@@ -131,6 +155,49 @@
   text-align: left;
   overflow-wrap: anywhere;
   word-break: break-word;
+  line-height: 1.35;
+}
+
+@media screen and (max-width: 1023px) {
+  .sidebar {
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar .author__avatar {
+    display: table-cell;
+    width: 54px;
+  }
+
+  .sidebar .author__avatar img {
+    max-width: 48px;
+    border: 2px solid #38bdf8;
+    border-radius: 50%;
+  }
+
+  .sidebar .author__content {
+    display: table-cell;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
+  .sidebar .author__urls-wrapper {
+    display: block;
+    margin-top: 0.75rem;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .sidebar .author__urls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .sidebar .author__urls a {
+    padding: 0.25rem 0;
+    color: #374151;
+    font-size: 0.85rem;
+  }
 }
 
 @include breakpoint($large) {
