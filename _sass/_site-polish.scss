@@ -1,21 +1,36 @@
-/* ========================================================================== 
-   Site-specific polish
+/* ==========================================================================
+   Site-specific polish -- "Refined Academic" design
+   --------------------------------------------------------------------------
+   Palette:
+     paper    #FBFCFD   ink      #16232E   slate  #5A6B7A
+     petrol   #0E6E8C   bright   #1590B5
+     hairline #E3EAEE   tint     #EFF6F9
    ========================================================================== */
 
 /*
    Top navigation
    --------------------------------------------------------------------------
-   Keep the masthead light, readable, and usable on mobile browsers.
+   Light masthead with a petrol top rule; serif wordmark; quiet nav.
+   Keeps the mobile scroll/dropdown behavior intact.
 */
 
 .masthead {
   background: #ffffff;
-  border-bottom: 2px solid #38bdf8;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+  border-top: 3px solid #0E6E8C;
+  border-bottom: 1px solid #E3EAEE;
+  box-shadow: none;
 }
 
 .masthead__inner-wrap {
   padding: 0.75rem 1rem;
+}
+
+.masthead__menu-item--lg a {
+  font-family: $serif;
+  font-size: 1.18em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #16232E;
 }
 
 .greedy-nav {
@@ -25,20 +40,20 @@
 
 .greedy-nav a,
 .masthead__inner-wrap a {
-  color: #111827;
+  color: #5A6B7A;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
 }
 
 .greedy-nav a:visited,
 .masthead__inner-wrap a:visited {
-  color: #111827;
+  color: #5A6B7A;
 }
 
 .greedy-nav a:hover,
 .masthead__inner-wrap a:hover {
-  color: #0369a1;
+  color: #0E6E8C;
 }
 
 .greedy-nav .visible-links {
@@ -71,29 +86,29 @@
 }
 
 .greedy-nav .visible-links a:hover {
-  background: #f1f5f9;
+  background: #EFF6F9;
   text-decoration: none;
 }
 
 .greedy-nav button {
-  background: #64748b;
+  background: #5A6B7A;
   color: #ffffff;
   border-radius: 0;
 }
 
 .greedy-nav .hidden-links {
   background: #ffffff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
+  border: 1px solid #E3EAEE;
+  box-shadow: 0 12px 30px rgba(22, 35, 46, 0.14);
 }
 
 .greedy-nav .hidden-links a {
-  color: #111827;
+  color: #16232E;
 }
 
 .greedy-nav .hidden-links a:hover {
-  background: #f1f5f9;
-  color: #0f172a;
+  background: #EFF6F9;
+  color: #0E6E8C;
 }
 
 @media screen and (max-width: 900px) {
@@ -113,10 +128,339 @@
 }
 
 /*
-   Sidebar/contact links
+   Headings & content typography
    --------------------------------------------------------------------------
-   Keep the mobile Follow dropdown opaque and readable.
 */
+
+.page__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.page__content {
+  h2 {
+    font-weight: 600;
+    padding-bottom: 0.35em;
+    border-bottom: 1px solid #E3EAEE;
+    margin-top: 1.9em;
+  }
+
+  h3 {
+    font-weight: 600;
+  }
+
+  p {
+    max-width: 68ch;
+  }
+
+  ul li,
+  ol li {
+    margin-bottom: 0.3em;
+  }
+
+  a:not(.btn) {
+    color: #0E6E8C;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(14, 110, 140, 0.3);
+    transition: color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      color: #1590B5;
+      border-bottom-color: #1590B5;
+    }
+  }
+}
+
+/* eyebrow label above section titles */
+.eyebrow {
+  display: block;
+  font-family: $sans-serif;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0E6E8C;
+  margin: 0 0 4px;
+}
+
+/*
+   Collapsible sections (homepage) and category groups
+   --------------------------------------------------------------------------
+*/
+
+details.sec {
+  margin-bottom: 2.6em;
+
+  > summary {
+    cursor: pointer;
+    list-style: none;
+    padding-bottom: 10px;
+    padding-right: 34px;
+    border-bottom: 1px solid #E3EAEE;
+    position: relative;
+
+    &::-webkit-details-marker { display: none; }
+
+    .sec-title {
+      font-family: $serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      line-height: 1.3;
+      transition: color 0.15s ease;
+    }
+
+    &:hover .sec-title { color: #0E6E8C; }
+
+    &::after {
+      content: '\2212'; /* minus */
+      position: absolute;
+      right: 2px;
+      bottom: 10px;
+      color: #0E6E8C;
+      font-size: 1.3em;
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+
+  &:not([open]) > summary::after { content: '+'; }
+
+  > .sec-body { padding-top: 16px; }
+}
+
+details.pub-group {
+  border: 1px solid #E3EAEE;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 10px;
+
+  > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 0.97em;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    transition: color 0.15s ease;
+
+    &::-webkit-details-marker { display: none; }
+
+    &::before {
+      content: '+';
+      color: #0E6E8C;
+      font-weight: 700;
+      flex: none;
+    }
+
+    &:hover { color: #0E6E8C; }
+
+    .count {
+      color: #5A6B7A;
+      font-weight: 400;
+      font-size: 0.85em;
+      margin-left: auto;
+      flex: none;
+    }
+  }
+
+  &[open] > summary::before { content: '\2212'; }
+
+  .pubs {
+    padding: 0 16px;
+    border-top: 1px dashed #E3EAEE;
+  }
+}
+
+/* expand/collapse-all toolbar */
+.toolbar {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 0 18px;
+  font-size: 0.82em;
+  color: #5A6B7A;
+
+  button {
+    background: none;
+    border: none;
+    padding: 2px 4px;
+    font: inherit;
+    color: #0E6E8C;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+/*
+   Publication rows, chips, awards
+   --------------------------------------------------------------------------
+*/
+
+.pub {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #E3EAEE;
+
+  &:last-child { border-bottom: 0; }
+
+  .year {
+    font-variant-numeric: tabular-nums;
+    color: #5A6B7A;
+    font-size: 0.9em;
+    padding-top: 2px;
+  }
+
+  .title {
+    font-family: $serif;
+    font-size: 1.02em;
+    font-weight: 600;
+    margin: 0 0 3px;
+    line-height: 1.4;
+
+    a {
+      color: #16232E !important;
+      border-bottom: none !important;
+
+      &:hover { color: #0E6E8C !important; }
+    }
+  }
+
+  .meta {
+    font-size: 0.86em;
+    color: #5A6B7A;
+    margin: 0;
+
+    .venue { font-weight: 600; color: #16232E; }
+  }
+
+  .links {
+    margin: 5px 0 0;
+    font-size: 0.84em;
+
+    a {
+      margin-right: 14px;
+      font-weight: 500;
+    }
+  }
+}
+
+.badge-award {
+  display: inline-block;
+  font-family: $sans-serif;
+  font-size: 0.72em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #0E6E8C;
+  border: 1px solid #0E6E8C;
+  border-radius: 3px;
+  padding: 1px 7px;
+  margin-left: 8px;
+  vertical-align: 1px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.chip {
+  font-size: 0.84em;
+  padding: 4px 13px;
+  border: 1px solid #E3EAEE;
+  border-radius: 999px;
+  background: #fff;
+  color: #16232E;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    border-color: #0E6E8C;
+    background: #EFF6F9;
+  }
+}
+
+.award-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.award {
+  background: #EFF6F9;
+  border: 1px solid #E3EAEE;
+  border-radius: 6px;
+  padding: 15px 18px;
+
+  .what {
+    font-family: $serif;
+    font-weight: 600;
+    font-size: 1.02em;
+    margin: 0 0 2px;
+  }
+
+  .where {
+    color: #5A6B7A;
+    font-size: 0.88em;
+    margin: 0;
+  }
+}
+
+/*
+   Buttons
+   --------------------------------------------------------------------------
+*/
+
+.btn--info {
+  background-color: #0E6E8C !important;
+
+  &:hover {
+    background-color: #1590B5 !important;
+  }
+}
+
+/*
+   Footer
+   --------------------------------------------------------------------------
+*/
+
+.page__footer {
+  background: #ffffff;
+  border-top: 1px solid #E3EAEE;
+  color: #5A6B7A;
+
+  a { color: #0E6E8C; }
+
+  footer {
+    margin-top: 1em;
+  }
+}
+
+.page__footer-copyright {
+  font-size: 0.8em;
+}
+
+/*
+   Sidebar / profile rail
+   --------------------------------------------------------------------------
+   Keeps the mobile Follow dropdown opaque and readable.
+*/
+
+.sidebar .author__name {
+  font-family: $serif;
+  font-weight: 600;
+}
 
 .sidebar .author__urls-wrapper,
 .sidebar .author__urls,
@@ -130,17 +474,17 @@
 }
 
 .sidebar .author__urls-wrapper button {
-  background: #374151;
+  background: #16232E;
   color: #ffffff;
-  border: 1px solid #1f2937;
+  border: 1px solid #16232E;
   border-radius: 5px;
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.22);
+  box-shadow: 0 2px 8px rgba(22, 35, 46, 0.18);
 }
 
 .sidebar .author__urls {
   background: #ffffff;
-  border: 1px solid #d1d5db;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.22);
+  border: 1px solid #E3EAEE;
+  box-shadow: 0 12px 28px rgba(22, 35, 46, 0.16);
   opacity: 1;
 }
 
@@ -154,7 +498,7 @@
 
 .sidebar .author__urls a {
   display: block;
-  color: #111827;
+  color: #16232E;
   text-align: left;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -162,12 +506,12 @@
 }
 
 .sidebar .author__urls a:visited {
-  color: #111827;
+  color: #16232E;
 }
 
 .sidebar .author__urls a:hover {
-  background: #f1f5f9;
-  color: #0369a1;
+  background: #EFF6F9;
+  color: #0E6E8C;
   text-decoration: none;
 }
 
@@ -183,7 +527,7 @@
 
   .sidebar .author__avatar img {
     max-width: 48px;
-    border: 2px solid #38bdf8;
+    border: 1px solid #E3EAEE;
     border-radius: 50%;
   }
 
@@ -223,7 +567,7 @@
   }
 
   .sidebar .author__urls li {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #E3EAEE;
   }
 
   .sidebar .author__urls li:last-child {

@@ -5,7 +5,7 @@
 .masthead {
   position: fixed;
   background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #E3EAEE;
   height: $masthead-height;
   top: 0;
   width: 100%;
@@ -32,12 +32,12 @@
     }
 
     a {
-      color: #374151;
+      color: #16232E;
       text-decoration: none;
       transition: color 0.15s ease;
 
       &:hover {
-        color: #0f172a;
+        color: #0E6E8C;
       }
     }
   }

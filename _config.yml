@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Jason Loh / Homepage"
+title                    : "Jason Loh"
 title_separator          : "-"
 name                     : &name "Jia-Chng (Jason) Loh"
 description              : &description "Personal academic homepage of Jia-Chng (Jason) Loh — cryptography researcher"

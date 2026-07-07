@@ -11,7 +11,7 @@ author_profile: true
 /* Category section */
 details.cs-category {
   margin: 1.2em 0;
-  border: 1px solid #d7e8ef;
+  border: 1px solid #E3EAEE;
   border-radius: 8px;
   overflow: hidden;
   background: #fff;
@@ -22,16 +22,16 @@ details.cs-category > summary {
   padding: 0.8em 1em;
   font-size: 1.15em;
   font-weight: 700;
-  color: #2c3e50;
-  background: linear-gradient(135deg, #f4fafd, #eaf4f9);
-  border-left: 4px solid #52adc8;
+  color: #16232E;
+  background: linear-gradient(135deg, #F6FAFC, #EFF6F9);
+  border-left: 4px solid #0E6E8C;
   transition: background 0.2s ease;
 }
 details.cs-category > summary:hover {
-  background: linear-gradient(135deg, #eaf6fb, #ddeef6);
+  background: linear-gradient(135deg, #F0F7FA, #E3F0F6);
 }
 details.cs-category[open] > summary {
-  border-bottom: 1px solid #d7e8ef;
+  border-bottom: 1px solid #E3EAEE;
 }
 details.cs-category > .cs-category-body {
   padding: 0.9em 1em;
@@ -40,32 +40,32 @@ details.cs-category > .cs-category-body {
 /* Paper note card */
 details.cs-paper {
   margin: 0.8em 0;
-  border: 1px solid #e3edf2;
+  border: 1px solid #E3EAEE;
   border-radius: 6px;
-  background: #fcfeff;
+  background: #ffffff;
 }
 details.cs-paper > summary {
   cursor: pointer;
   list-style: none;
   padding: 0.65em 0.9em;
   font-weight: 600;
-  color: #34495e;
+  color: #16232E;
   transition: color 0.2s ease, background 0.2s ease;
 }
 details.cs-paper > summary:hover {
-  color: #52adc8;
-  background: #f4fafd;
+  color: #0E6E8C;
+  background: #F6FAFC;
 }
 details.cs-paper[open] > summary {
-  color: #52adc8;
-  border-bottom: 1px dashed #d7e8ef;
+  color: #0E6E8C;
+  border-bottom: 1px dashed #E3EAEE;
 }
 details.cs-paper > .cs-paper-body {
   padding: 0.9em 1.1em;
 }
 details.cs-paper .cs-paper-meta {
   font-size: 0.92em;
-  color: #5d6d7e;
+  color: #5A6B7A;
 }
 
 /* Arrow indicators */
@@ -74,7 +74,7 @@ details.cs-paper > summary::before {
   content: '▸';
   display: inline-block;
   margin-right: 0.5em;
-  color: #52adc8;
+  color: #0E6E8C;
   transition: transform 0.2s ease;
 }
 details.cs-category[open] > summary::before,
@@ -89,22 +89,22 @@ details.cs-paper > summary::-webkit-details-marker {
 /* Small utility sections */
 details.cs-aside {
   margin: 0.8em 0;
-  border-left: 3px solid #d7e8ef;
+  border-left: 3px solid #E3EAEE;
   padding-left: 0.9em;
 }
 details.cs-aside > summary {
   cursor: pointer;
   list-style: none;
   font-weight: 600;
-  color: #5d6d7e;
+  color: #5A6B7A;
   padding: 0.3em 0;
 }
-details.cs-aside > summary:hover { color: #52adc8; }
+details.cs-aside > summary:hover { color: #0E6E8C; }
 details.cs-aside > summary::before {
   content: '▸';
   display: inline-block;
   margin-right: 0.45em;
-  color: #52adc8;
+  color: #0E6E8C;
   transition: transform 0.2s ease;
 }
 details.cs-aside[open] > summary::before { transform: rotate(90deg); }

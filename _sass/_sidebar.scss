@@ -278,19 +278,19 @@
   .sidebar .author__avatar img {
     max-width: 150px;
     padding: 4px;
-    border: 2px solid #e5e7eb;
+    border: 2px solid #E3EAEE;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     background: #ffffff;
   }
 
   .sidebar .author__name {
-    color: #111827;
+    color: #16232E;
     font-weight: 700;
     letter-spacing: -0.01em;
   }
 
   .sidebar .author__bio {
-    color: #4b5563;
+    color: #5A6B7A;
     font-size: 0.82em;
     line-height: 1.55;
   }
@@ -298,21 +298,21 @@
   .sidebar .author__urls {
     margin-top: 0.75rem;
     padding-top: 0.75rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid #E3EAEE;
   }
 
   .sidebar .author__urls a {
     margin-bottom: 0.35rem;
     padding: 0.35rem 0.5rem;
     border-radius: 6px;
-    color: #374151;
+    color: #16232E;
     font-size: 0.82em;
     transition: background 0.15s ease, color 0.15s ease;
   }
 
   .sidebar .author__urls a:hover {
-    background: #f3f4f6;
-    color: #0f172a;
+    background: #EFF6F9;
+    color: #0E6E8C;
     text-decoration: none;
   }
 }
