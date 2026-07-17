@@ -163,6 +163,37 @@ CASPER is a nice example of transplanting a mature defensive idea (honeywords) i
 </details>
 
 <details class="cs-category" open>
+<summary>Zero-Knowledge Proofs &amp; Network Security</summary>
+<div class="cs-category-body" markdown="1">
+
+<details class="cs-paper">
+<summary>Zero-Knowledge Middleboxes (IACR ePrint 2021/1022)</summary>
+<div class="cs-paper-body" markdown="1">
+
+<div class="cs-paper-meta" markdown="1">
+**Paper:** Paul Grubbs, Arasu Arun, Ye Zhang, Joseph Bonneau, and Michael Walfish, *Zero-Knowledge Middleboxes*, IACR ePrint 2021/1022  
+**Paper:** [https://eprint.iacr.org/2021/1022](https://eprint.iacr.org/2021/1022)  
+**Source code:** [https://github.com/pag-crypto/zkmbs](https://github.com/pag-crypto/zkmbs)  
+**Category:** Zero-Knowledge Proofs; Network Security; TLS 1.3; Privacy-Preserving Middleboxes  
+**Status:** Paper-and-code study  
+**Summary note:** Generated with assistance from ChatGPT; subject to revision after deeper proof and implementation review.
+</div>
+
+**Core question:** Can a middlebox enforce policies over encrypted traffic without receiving decryption keys or learning the underlying plaintext?
+
+**Main idea:** The client proves in zero knowledge that the encrypted traffic observed by the middlebox is bound to a real TLS channel and that the hidden plaintext satisfies the policy. The main engineering challenge is not only expressing the policy, but efficiently proving TLS key derivation, record consistency, parsing, and policy evaluation inside the circuit.
+
+**Implementation coverage:** The official repository contains the three case studies from the paper, TLS 1.3 channel-opening circuits, AES-CTR/SHA-256/Merkle/ECDHE/key-schedule components, readable xJsnark-derived code, generated Java circuit sources, transcript-generation utilities, and scripts for reproducing the gate counts and timing results.
+
+**Study page:** [Read the detailed paper-and-code study →](/cryptostudies/zkmbs/)
+
+</div>
+</details>
+
+</div>
+</details>
+
+<details class="cs-category" open>
 <summary>Symmetric Cryptography &amp; Cryptanalysis</summary>
 <div class="cs-category-body" markdown="1">
 
@@ -214,6 +245,7 @@ This paper is useful as a risk-assessment reading. It challenges the habit of tr
 <summary>Update log</summary>
 <div markdown="1">
 
+* **2026-07-18:** Added a paper-and-code study of *Zero-Knowledge Middleboxes* with a dedicated technical page and implementation map.
 * **2026-07-07:** Reorganized the page into categorized, expandable sections for easier navigation.
 * **2026-07-07:** Added a study note on *CASPER* (USENIX Security 2025) with links to my hands-on companion repo, Pollo — The CASPER Saver.
 * **2026-07-07:** Added a disclosure note that the summaries are generated with assistance from AI tools (ChatGPT and Claude Code) and should be treated as working notes.
