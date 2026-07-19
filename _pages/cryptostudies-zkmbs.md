@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "Zero-Knowledge Middleboxes"
+title: "Zero-Knowledge Middleboxes — USENIX Security 2022"
 permalink: /cryptostudies/zkmbs/
 author_profile: true
 ---
@@ -9,11 +9,12 @@ author_profile: true
 
 [← Back to CryptoStudies](/cryptostudies/)
 
-Zero-Knowledge Middleboxes
-==========================
+Zero-Knowledge Middleboxes — USENIX Security 2022
+===================================================
 
-**Paper:** Paul Grubbs, Arasu Arun, Ye Zhang, Joseph Bonneau, and Michael Walfish, *Zero-Knowledge Middleboxes*, IACR ePrint 2021/1022  
-**Paper link:** [https://eprint.iacr.org/2021/1022](https://eprint.iacr.org/2021/1022)  
+**Paper:** Paul Grubbs, Arasu Arun, Ye Zhang, Joseph Bonneau, and Michael Walfish, *Zero-Knowledge Middleboxes*, 31st USENIX Security Symposium (USENIX Security 2022), pp. 4255–4272  
+**Official publication:** [USENIX Security 2022](https://www.usenix.org/conference/usenixsecurity22/presentation/grubbs)  
+**Preprint:** [IACR ePrint 2021/1022](https://eprint.iacr.org/2021/1022)  
 **Source code:** [https://github.com/pag-crypto/zkmbs](https://github.com/pag-crypto/zkmbs)  
 **Category:** Zero-Knowledge Proofs; Network Security; TLS 1.3; Privacy-Preserving Middleboxes  
 **Status:** Paper-and-code study  
