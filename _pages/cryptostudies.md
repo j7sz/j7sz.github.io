@@ -167,12 +167,13 @@ CASPER is a nice example of transplanting a mature defensive idea (honeywords) i
 <div class="cs-category-body" markdown="1">
 
 <details class="cs-paper">
-<summary>Zero-Knowledge Middleboxes (IACR ePrint 2021/1022)</summary>
+<summary>Zero-Knowledge Middleboxes (USENIX Security 2022)</summary>
 <div class="cs-paper-body" markdown="1">
 
 <div class="cs-paper-meta" markdown="1">
-**Paper:** Paul Grubbs, Arasu Arun, Ye Zhang, Joseph Bonneau, and Michael Walfish, *Zero-Knowledge Middleboxes*, IACR ePrint 2021/1022  
-**Paper:** [https://eprint.iacr.org/2021/1022](https://eprint.iacr.org/2021/1022)  
+**Paper:** Paul Grubbs, Arasu Arun, Ye Zhang, Joseph Bonneau, and Michael Walfish, *Zero-Knowledge Middleboxes*, 31st USENIX Security Symposium (USENIX Security 2022), pp. 4255–4272  
+**Official publication:** [USENIX Security 2022](https://www.usenix.org/conference/usenixsecurity22/presentation/grubbs)  
+**Preprint:** [IACR ePrint 2021/1022](https://eprint.iacr.org/2021/1022)  
 **Source code:** [https://github.com/pag-crypto/zkmbs](https://github.com/pag-crypto/zkmbs)  
 **Category:** Zero-Knowledge Proofs; Network Security; TLS 1.3; Privacy-Preserving Middleboxes  
 **Status:** Paper-and-code study  
@@ -245,6 +246,7 @@ This paper is useful as a risk-assessment reading. It challenges the habit of tr
 <summary>Update log</summary>
 <div markdown="1">
 
+* **2026-07-19:** Corrected the *Zero-Knowledge Middleboxes* headline and citation to identify its publication at USENIX Security 2022.
 * **2026-07-18:** Added a paper-and-code study of *Zero-Knowledge Middleboxes* with a dedicated technical page and implementation map.
 * **2026-07-07:** Reorganized the page into categorized, expandable sections for easier navigation.
 * **2026-07-07:** Added a study note on *CASPER* (USENIX Security 2025) with links to my hands-on companion repo, Pollo — The CASPER Saver.
